@@ -1,0 +1,18 @@
+name: cicd pipeline
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.1.29
+      - name: Run tests
+        run: bun test
