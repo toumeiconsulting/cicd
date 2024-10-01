@@ -1,12 +1,13 @@
 name: cicd pipeline
 
 on:
-  pull_request:
+  push:
     branches: [main]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: integration
 
     steps:
       - uses: actions/checkout@v4
