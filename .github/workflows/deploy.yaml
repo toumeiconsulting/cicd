@@ -20,6 +20,7 @@ jobs:
 
   # Deployment protection rules require specific conditions to pass before a job referencing the environment can proceed.
   deploy-prd:
+    needs: [deploy]
     runs-on: ubuntu-latest
     environment: production
 
